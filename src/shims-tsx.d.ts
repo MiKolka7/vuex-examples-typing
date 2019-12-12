@@ -1,7 +1,7 @@
 import Vue, { VNode } from 'vue'
 import { CommitOptions, DispatchOptions, Store as VuexStore } from 'vuex'
 
-import { StoreState, Store } from './types'
+import { Store } from './types'
 
 declare global {
     namespace JSX {
@@ -38,7 +38,7 @@ declare module 'vuex/types/index' {
 }
 
 declare module 'vue/types/vue' {
-    type CustomStore = Omit<VuexStore<StoreState>, 'getters' | 'commit' | 'dispatch'>
+    type CustomStore = Omit<VuexStore<Store.State>, 'getters' | 'commit' | 'dispatch'>
 
     interface Vue {
         $store: CustomStore & {

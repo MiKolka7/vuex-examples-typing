@@ -1,4 +1,3 @@
-import { CommonState, ProfileState } from '../store'
 import * as Store from './Store'
 
 export { Store }
@@ -16,10 +15,4 @@ export type Profile = {
     idCity: number
     idCountry: number
     name: string
-}
-
-
-export type StoreState = {
-    profile: ProfileState
-    common: CommonState
 }

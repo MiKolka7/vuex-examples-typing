@@ -1,4 +1,10 @@
 import { Profile, User } from '@/types'
+import { CommonState, ProfileState } from '@/store'
+
+export type State = {
+    profile: ProfileState
+    common: CommonState
+}
 
 export type MutationTypes = {
     COMMON_INIT_USER: User

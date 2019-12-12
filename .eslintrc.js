@@ -15,6 +15,7 @@ module.exports = {
         indent: [2, 4, { SwitchCase: 1 }],
         'vue/html-indent': [2, 4],
         'vue/script-indent': [2, 4, { baseIndent: 0 }],
+        'import/no-cycle': 0,
         semi: [2, 'never'],
     },
 }
