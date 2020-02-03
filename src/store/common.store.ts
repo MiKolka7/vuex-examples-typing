@@ -4,7 +4,7 @@ import {
     Module,
     MutationTree,
 } from 'vuex'
-import { StoreState, User, Store } from '@/types'
+import { User, Store } from '@/types'
 
 export interface CommonState {
     user: User | any
@@ -32,13 +32,13 @@ const mutations: MutationTree<CommonState> = {
     },
 }
 
-const getters: GetterTree<CommonState, StoreState> = {
+const getters: GetterTree<CommonState, Store.State> = {
     isAuthenticated(state) {
         return !!state.user.id
     },
 }
 
-const actions: ActionTree<CommonState, StoreState> = {
+const actions: ActionTree<CommonState, Store.State> = {
     LOGIN(context, user: Store.ActionTypes['LOGIN']): Store.ActionTypesResult['LOGIN'] {
         context.commit('COMMON_INIT_USER', user)
     },
@@ -48,7 +48,7 @@ const actions: ActionTree<CommonState, StoreState> = {
     },
 }
 
-const storeCommon: Module<CommonState, StoreState> = {
+const storeCommon: Module<CommonState, Store.State> = {
     state: stateCommon,
     getters,
     mutations,

@@ -1,6 +1,6 @@
 import { Vue } from 'vue-property-decorator'
 import { Module, MutationTree } from 'vuex'
-import { Profile, StoreState, Store } from '@/types'
+import { Profile, Store } from '@/types'
 
 export type ProfileState = {
     profiles: {
@@ -20,7 +20,7 @@ const mutations: MutationTree<ProfileState> = {
     },
 }
 
-const storeProfile: Module<ProfileState, StoreState> = {
+const storeProfile: Module<ProfileState, Store.State> = {
     state: stateProfile,
     mutations,
 }
